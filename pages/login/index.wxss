@@ -1,0 +1,30 @@
+/* pages/login/index.wxss */
+.login-inputs{
+  width: 96%;
+  margin: 0 auto;
+}
+.login-input{
+  width: calc(100% - 10px);
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #D8D8D8;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #999999;
+}
+.phonenum{
+  margin-top: 40px;
+}
+
+.loginbtn{
+  /* background: #C8372B; */
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  margin-top: 40px;
+  font-size: 14px;
+  /* color: #FFFFFF; */
+  line-height: 40px;
+}

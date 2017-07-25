@@ -1,0 +1,14 @@
+<!--pages/login/index.wxml-->
+<view class="login">
+    <view class="login-inputs">
+      <form >
+        <input name="phonenum" bindinput="phoneInput"
+          class="phonenum login-input"
+          placeholder="手机号／会员卡号" />
+        <input name="passworld" bindinput="passInput"
+          class="passworld login-input" 
+          placeholder="密码" />       
+        <button bindtap="rightGo" class="loginbtn">登录</button>
+      </form>
+    </view>
+</view>

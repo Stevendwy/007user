@@ -1,0 +1,22 @@
+<!--pages/search/index.wxml-->
+<view class="search">
+  <view class="search-searchbtn">
+    <input class="search-input" 
+    name="searchinput"
+    placeholder="请输入零件号"
+    bindinput="goSearch"
+    value="{{inputdata}}" 
+    auto-focus/>
+    <button class="search-btn">查</button>
+  </view> 
+  <view class="search-result">
+    <block wx:for="{{contents}}">
+      <view class="search-data">
+        <view class="search-data-world">{{items[index]}}</view>
+        <view class="search-data-img">
+          <image class="search-img" src="{{new_pic[item]}}"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
