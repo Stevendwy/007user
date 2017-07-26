@@ -1,0 +1,25 @@
+<!--pages/list/index.wxml-->
+<view class="list">
+  <view class="list-head">
+    <image src="{{img}}" 
+    data-src="{{img}}" 
+    mode="aspectFit"
+    bindtap="previewImage"
+    ></image>
+  </view>
+  <view class="list-list">
+    <block wx:for="{{datalist}}" wx:key="{{index}}">
+      <view class="list-list-content">
+        <view class="list-left">
+          <view class="list-left-child">名称：{{item.name}}</view>
+          <view class="list-left-child">号码：{{item.id}}</view>
+          <view class="list-left-child">类型：{{item.type}}</view>
+          <view class="list-left-child">时间：{{item.release_date}}</view>
+        </view>
+        <view class="list-right">
+          <view class="list-right-child">详情</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

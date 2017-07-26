@@ -22,20 +22,7 @@ Page({
     duration: 2000,
 
     contents: [],
-    items: [
-      "智能大过电能 简析奔驰Generation EQ",
-      "下得了赛道送得了葬 特斯拉已无所不能",
-      "全能探险家 全新一代路虎发现技术解析",
-      "科技至上 林肯MKZ车机与主动安全体验",
-      "燃料电池VS纯电动 谁会是新能源一哥？",
-      "不朽的传奇 奥迪五缸发动机40年进化史",
-      "智能大过电能 简析奔驰Generation EQ",
-      "下得了赛道送得了葬 特斯拉已无所不能",
-      "全能探险家 全新一代路虎发现技术解析",
-      "科技至上 林肯MKZ车机与主动安全体验",
-      "燃料电池VS纯电动 谁会是新能源一哥？",
-      "不朽的传奇 奥迪五缸发动机40年进化史"
-    ],
+    contentslist: [],
     new_pic: [
       "http://pic.xcarimg.com/img/07news/201610/wNdmGPDBGm1475580976311755147558097631.jpg-200x150.jpg",
       "http://pic.xcarimg.com/img/07news/201610/qnDMIK50ud1475464258081744147546425808.jpg-200x150.jpg",
@@ -55,17 +42,32 @@ Page({
   },
   goSearch:function(e){
     let search_input = e.detail.value
-    console.log(search_input) 
-    if (search_input.length>=1){
-      this.setData({
-        contents: [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5],
-        inputdata: search_input
-      })
-    }else{
-      this.setData({
-        contents: []
-      })
+    let obj = {
+      "kw": search_input,
+      "pi":2,
+      "pz":20
     }
+    let that = this
+    console.log(search_input) 
+    wx.request({
+      url: 'http://v5.pc.duomi.com/search-ajaxsearch-searchall',
+      data: obj,
+      header: { 'Content-Type': 'application/json' },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          contents: res.data.artists,
+          contentslist: res.data.albums
+        })
+      }
+    })
+  },
+
+  goShowimg:function(e){
+    let message = e.currentTarget.dataset.name
+    wx.navigateTo({
+      url: '../list/index?kw=' + message,
+    })
   },
   /**
    * 生命周期函数--监听页面加载

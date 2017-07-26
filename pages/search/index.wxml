@@ -10,11 +10,11 @@
     <button class="search-btn">查</button>
   </view> 
   <view class="search-result">
-    <block wx:for="{{contents}}">
-      <view class="search-data">
-        <view class="search-data-world">{{items[index]}}</view>
+    <block wx:for="{{contents}}" wx:key="{{index}}">
+      <view class="search-data" bindtap="goShowimg" data-name="{{item.name}}">
+        <view class="search-data-world">{{item.id}}{{item.name}}</view>
         <view class="search-data-img">
-          <image class="search-img" src="{{new_pic[item]}}"></image>
+          <image class="search-img" src="{{item.portrait}}"></image>
         </view>
       </view>
     </block>
