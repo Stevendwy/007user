@@ -3,12 +3,34 @@
   <view class="search-searchbtn">
     <input class="search-input" 
     name="searchinput"
-    placeholder="请输入零件号"
+    placeholder="零件号搜索"
     bindinput="goSearch"
     value="{{inputdata}}" 
     auto-focus/>
-    <button class="search-btn">查</button>
-  </view> 
+    <view class="search-btn">查询</view>
+  </view>
+
+  <!--history  -->
+  <view class="search-history">
+    <view class="search-h-nav">
+      <text>历史记录</text>
+      <text class="search-h-clear">清除</text>
+    </view>
+    <block wx:for="{{history}}" wx:key="{{index}}" > 
+      <view class="search-h-click" bindtap="getpartnum" data-world="{{item}}">{{item}}</view>
+    </block>
+  </view>
+
+  <view class="search-history">
+    <view class="search-hot-nav">
+      <text>热门搜索</text>
+    </view>
+    <block wx:for="{{hothistory}}" wx:key="{{index}}" > 
+      <view class="search-hot-click" bindtap="getpartnum" data-world="{{item}}">{{item}}</view>
+    </block>
+  </view>
+
+
   <view class="search-result">
     <block wx:for="{{contents}}" wx:key="{{index}}">
       <view class="search-data" bindtap="goShowimg" data-name="{{item.name}}">

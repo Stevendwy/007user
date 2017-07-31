@@ -16,6 +16,19 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function j(tit, msg) {
+  wx.showModal({
+    title: tit,
+    content: msg,
+    showCancel: false,
+    success: function (res) {
+      if (res.confirm) {
+      }
+    }
+  })
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  msg: j
 }

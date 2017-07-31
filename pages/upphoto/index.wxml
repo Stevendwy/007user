@@ -1,0 +1,19 @@
+<!--pages/upphoto/index.wxml-->
+<loading hidden="{{hidden}}">
+  上传中...
+</loading>
+<view class="merch_img">
+  <view class="indentityCard">
+    <view class="identityCard_front" bindtap="frontimage">
+      <image src="http://s.tc.blyoo.cn/cloud/g/i4/6c55bfc3ec290449.png" class="images"></image>
+      <view class="imgs">身份证正面</view>
+      <image src="{{FilePaths}}" mode="aspecFill" class="paths" />
+    </view>
+    <view class="identityCard_recite" bindtap="reciteimage">
+      <image src="http://s.tc.blyoo.cn/cloud/g/i4/6c55bfc3ec290449.png" class="images"></image>
+      <view class="imgs">身份证背面</view>
+      <image src="{{recitePaths}}" mode="aspecFill" class="paths" />
+    </view>
+  </view>
+  <button class="next_step" type="primary" disabled="{{buthidden}}" bindtap="primary">下一步</button>
+</view>

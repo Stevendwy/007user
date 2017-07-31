@@ -6,6 +6,8 @@ Page({
    */
   data: {
     inputdata:"",
+    history: ["95820102100－宝马", "95820102102－保时捷", "95820102103－保时捷","95820102104－保时捷"],
+    hothistory: ["95820102108－宝马","95820102106－保时捷"],
     img_urls: [
       "http://d1.xcar.com.cn/attached/image/20160929/20160929155858_35240.jpg",
       "http://d1.xcar.com.cn/attached/image/20160929/20160929160029_26399.jpg",
@@ -63,8 +65,17 @@ Page({
     })
   },
 
+  getpartnum:function(e){
+    let message = e.currentTarget.dataset.world
+    let _mess = message.split("－")
+    let newmun = _mess[0]
+    wx.navigateTo({
+      url: '../list/index?kw=' + newmun,
+    })
+  },
+
   goShowimg:function(e){
-    let message = e.currentTarget.dataset.name
+    let message = e.currentTarget.dataset.name   
     wx.navigateTo({
       url: '../list/index?kw=' + message,
     })

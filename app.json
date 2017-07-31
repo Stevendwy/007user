@@ -1,15 +1,19 @@
 {
-  "pages":[    
+  "pages":[
+    "pages/resule/index",
+    "pages/search/index",    
     "pages/index/index",
     "pages/register/index",
     "pages/login/index",
-    "pages/search/index",
+    
     "pages/list/index",
+
+    "pages/upphoto/index",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"#1C1D1F",
-    "navigationBarBackgroundColor": "#1C1D1F",
+    "navigationBarBackgroundColor": "#393A3D",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"#1C1D1F"
   }
