@@ -1,9 +1,10 @@
 {
-  "pages":[
-    "pages/resule/index",
-    "pages/search/index",    
+  "pages":[ 
     "pages/index/index",
     "pages/register/index",
+    "pages/homemv/index",
+    "pages/search/index",
+    "pages/resule/index",
     "pages/login/index",
     
     "pages/list/index",

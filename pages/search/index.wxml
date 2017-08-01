@@ -1,13 +1,14 @@
 <!--pages/search/index.wxml-->
 <view class="search">
   <view class="search-searchbtn">
-    <input class="search-input" 
-    name="searchinput"
-    placeholder="零件号搜索"
-    bindinput="goSearch"
-    value="{{inputdata}}" 
-    auto-focus/>
-    <view class="search-btn">查询</view>
+      <icon type="search" size="15" class="search-icon"></icon>
+      <input class="search-input" bindinput="inputchange"
+      name="searchinput"
+      placeholder="零件号搜索"
+      value="{{inputdata}}" 
+      auto-focus/>
+      <icon type="cancel" size="15" class="{{inputclear?'cancel-icon':'.none-icon'}}" bindtap="inputClear"></icon>
+      <view class="search-btn" bindtap="goSearch">查询</view>
   </view>
 
   <!--history  -->

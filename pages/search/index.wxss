@@ -8,17 +8,17 @@
   height: 88rpx;
   background-color: #393A3D;
   align-items:center;
+  position: relative;
 }
 .search-input{
-  width:80%;
+  width:72%;
   height:56rpx;
   display:inline-flex;
   margin-left:1%;
   background:#FFFFFF;
   border:1px solid #D8D8D8;
   border-radius:10rpx;
-  padding-left:1%;
-  font-family:PingFang-SC-Regular;
+  padding-left:8%;
   font-size:26rpx;
   color:#666666;
   letter-spacing:0.27px;
@@ -28,13 +28,27 @@
   display:inline-flex;
   margin-right:3%;
   line-height:32rpx;
-  font-family:PingFang-SC-Regular;
   font-size:32rpx;
   color:#FFFFFF;
   text-align:center;
   margin:0 auto;
 }
 
+.search-icon,.cancel-icon{
+  display:inline-block;
+  font-size:0;
+  position:absolute;
+}
+.search-icon{
+  left:3%;
+}
+.cancel-icon{
+  right: 20%;
+}
+
+.none-icon{
+  display: none;
+}
 .search-history{
   width: 100%;
 }

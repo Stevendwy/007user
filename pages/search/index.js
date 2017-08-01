@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    inputclear:false,
     inputdata:"",
     history: ["95820102100－宝马", "95820102102－保时捷", "95820102103－保时捷","95820102104－保时捷"],
     hothistory: ["95820102108－宝马","95820102106－保时捷"],
@@ -42,24 +43,45 @@ Page({
 
     load: false
   },
+  inputchange:function(e){
+    let s_input = e.detail.value
+    let s_show = e.detail.value.replace(/\W/g, "").length>1?true:false
+    this.setData({
+      inputdata: s_input,
+      inputclear: s_show 
+    })
+  },
+
+  inputClear:function(){
+    this.setData({
+      inputdata:""
+    })
+  },
   goSearch:function(e){
-    let search_input = e.detail.value
+    let search_input = this.data.inputdata.replace(/\W/g, "")
     let obj = {
       "kw": search_input,
       "pi":2,
       "pz":20
     }
     let that = this
-    console.log(search_input) 
+    if (search_input.length<1){
+      console.log("is kongge ")
+        return
+    }
     wx.request({
       url: 'http://v5.pc.duomi.com/search-ajaxsearch-searchall',
       data: obj,
       header: { 'Content-Type': 'application/json' },
       success: function (res) {
         console.log(res.data)
-        that.setData({
-          contents: res.data.artists,
-          contentslist: res.data.albums
+        // that.setData({
+        //   contents: res.data.artists,
+        //   contentslist: res.data.albums
+        // })
+
+        wx.navigateTo({
+          url: '../resule/index',
         })
       }
     })
@@ -70,7 +92,7 @@ Page({
     let _mess = message.split("－")
     let newmun = _mess[0]
     wx.navigateTo({
-      url: '../list/index?kw=' + newmun,
+      url: '../resule/index?kw=' + newmun,
     })
   },
 
