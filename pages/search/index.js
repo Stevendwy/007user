@@ -9,39 +9,8 @@ Page({
     inputdata:"",
     history: ["95820102100－宝马", "95820102102－保时捷", "95820102103－保时捷","95820102104－保时捷"],
     hothistory: ["95820102108－宝马","95820102106－保时捷"],
-    img_urls: [
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929155858_35240.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160029_26399.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929155928_68103.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160201_31895.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160229_19490.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929155858_35240.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160029_26399.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929155928_68103.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160201_31895.jpg",
-      "http://d1.xcar.com.cn/attached/image/20160929/20160929160229_19490.jpg"
-    ],
-    interval: 5000,
-    duration: 2000,
-
     contents: [],
     contentslist: [],
-    new_pic: [
-      "http://pic.xcarimg.com/img/07news/201610/wNdmGPDBGm1475580976311755147558097631.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201610/qnDMIK50ud1475464258081744147546425808.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201609/GSJZ0C7c3x1475116821458482147511682145.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201609/CtdlTtd2El1475067775454577147506777545.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201609/mvaZ75mVWE1473064107454160147306410745.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201609/VxAsOdBCh31473237548487414147323754848.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201610/wNdmGPDBGm1475580976311755147558097631.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201610/qnDMIK50ud1475464258081744147546425808.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201609/GSJZ0C7c3x1475116821458482147511682145.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201609/CtdlTtd2El1475067775454577147506777545.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201609/mvaZ75mVWE1473064107454160147306410745.jpg-200x150.jpg",
-      "http://pic.xcarimg.com/img/07news/201609/VxAsOdBCh31473237548487414147323754848.jpg-200x150.jpg"
-    ],
-
-    load: false
   },
   inputchange:function(e){
     let s_input = e.detail.value
@@ -80,9 +49,9 @@ Page({
         //   contentslist: res.data.albums
         // })
 
-        wx.navigateTo({
-          url: '../resule/index',
-        })
+        // wx.navigateTo({
+        //   url: '../resule/index',
+        // })
       }
     })
   },

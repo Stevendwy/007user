@@ -2,13 +2,11 @@
   "pages":[ 
     "pages/index/index",
     "pages/register/index",
-    "pages/homemv/index",
-    "pages/search/index",
+    "pages/homemv/index", 
+    "pages/search/index",  
     "pages/resule/index",
-    "pages/login/index",
-    
+    "pages/login/index",   
     "pages/list/index",
-
     "pages/upphoto/index",
     "pages/logs/logs"
   ],
