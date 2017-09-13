@@ -12,7 +12,7 @@
   </view>
 
   <!--history  -->
-  <view class="search-history">
+   <view class="search-history">
     <view class="search-h-nav">
       <text>历史记录</text>
       <text class="search-h-clear">清除</text>
@@ -20,16 +20,16 @@
     <block wx:for="{{history}}" wx:key="{{index}}" > 
       <view class="search-h-click" bindtap="getpartnum" data-world="{{item}}">{{item}}</view>
     </block>
-  </view>
+  </view> 
 
-  <view class="search-history">
+  <!-- <view class="search-history">
     <view class="search-hot-nav">
       <text>热门搜索</text>
     </view>
     <block wx:for="{{hothistory}}" wx:key="{{index}}" > 
       <view class="search-hot-click" bindtap="getpartnum" data-world="{{item}}">{{item}}</view>
     </block>
-  </view>
+  </view> -->
 
 
   <view class="search-result">

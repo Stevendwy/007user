@@ -7,6 +7,7 @@ Page({
   data: {
     inputclear:false,
     inputdata:"",
+    savehistory:[],
     history: ["95820102100－宝马", "95820102102－保时捷", "95820102103－保时捷","95820102104－保时捷"],
     hothistory: ["95820102108－宝马","95820102106－保时捷"],
     contents: [],
@@ -38,22 +39,44 @@ Page({
       console.log("is kongge ")
         return
     }
-    wx.request({
-      url: 'http://v5.pc.duomi.com/search-ajaxsearch-searchall',
-      data: obj,
-      header: { 'Content-Type': 'application/json' },
-      success: function (res) {
-        console.log(res.data)
-        // that.setData({
-        //   contents: res.data.artists,
-        //   contentslist: res.data.albums
-        // })
 
-        // wx.navigateTo({
-        //   url: '../resule/index',
-        // })
+    let _savehistory = this.data.savehistory
+    let ishav = _savehistory.indexOf(search_input)
+    if (ishav==-1){      
+      this.data.savehistory.unshift(search_input)
+      if (this.data.savehistory.length > 5) {
+        this.data.savehistory = this.data.savehistory.slice(0, 5)
       }
+      wx.setStorage({
+        key: 'savehistory',
+        data: this.data.savehistory
+      });
+    }
+    that.setData({
+      history: this.data.savehistory
     })
+
+    wx.navigateTo({
+      url: '../resule/index',
+      // url: '../resule/index?kw=' + search_input,
+    })
+
+    // wx.request({
+    //   url: 'http://v5.pc.duomi.com/search-ajaxsearch-searchall',
+    //   data: obj,
+    //   header: { 'Content-Type': 'application/json' },
+    //   success: function (res) {
+    //     console.log(res.data)
+    //     // that.setData({
+    //     //   contents: res.data.artists,
+    //     //   contentslist: res.data.albums
+    //     // })
+
+    //     // wx.navigateTo({
+    //     //   url: '../resule/index',
+    //     // })
+    //   }
+    // })
   },
 
   getpartnum:function(e){
@@ -61,41 +84,51 @@ Page({
     let _mess = message.split("－")
     let newmun = _mess[0]
     wx.navigateTo({
-      url: '../resule/index?kw=' + newmun,
+      url: '../resule/index',
     })
   },
 
   goShowimg:function(e){
     let message = e.currentTarget.dataset.name   
     wx.navigateTo({
-      url: '../list/index?kw=' + message,
+      url: '../resule/index',
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
     if (options.code!=undefined){
       this.setData({
         contents: [0, 1, 2, 3, 4, 5],
         inputdata: options.code
       })
     }
+    var that = this;
+    wx.getStorage({
+      key: 'savehistory',
+      success: function (res) {
+        let _data = res.data
+        that.setData({ 
+          history: _data ,
+          savehistory: _data
+        });
+      }
+    });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+   
   },
 
   /**

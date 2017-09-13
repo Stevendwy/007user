@@ -11,7 +11,7 @@ Page({
     headlist: ["基础信息", "渠道价格", "替换件", "组件","技术信息"],
     leftlist: ["品牌:", "零件号:", "车型:", "型号:", "件数:","参考价格:"],
     rightlist: ["pid", "advise", "ptype", "origin", "haschild","price"],
-    logoimg:"../../image/btn_reset@3x.png",
+    logoimg:"",
     mesdata: [{ "value": "\u5fae\u5c18\u6ee4\u6e05\u5668/\u6d3b\u6027\u78b3\u8fc7\u6ee4\u5668", "key": "\u539f\u5382\u540d\u79f0" }, { "value": "64319313519", "key": "\u539f\u5382OE\u53f7" }, { "value": "2017-02-19", "key": "\u66f4\u65b0\u65f6\u95f4" }],
     pricedata: [{ "origin": "--", "remark": "--", "parttype": "\u539f\u5382\u4ef6 ", "pid": "1141598", "factory": "\u539f\u5382", "prices": "\u00a5889.0", "mill": "\u8def\u864e" },],
     replacedata: [{ "lable": "", "haschild": 1, "price": "\u00a5294.0", "pid": "64316962553", "ptype": "Y", "num": 2, "parentnum": 1, "counts": "", "level": 1, "is_show": "", "is_last": 1, "advise": "" }, { "lable": "", "haschild": 1, "price": "\u00a5294.0", "pid": "64319142115", "ptype": "Y", "num": 3, "parentnum": 2, "counts": "", "level": 2, "is_show": "", "is_last": 1, "advise": "" }, { "lable": "", "haschild": 1, "price": "\u00a5294.0", "pid": "64316962549", "ptype": "Y", "num": 4, "parentnum": 3, "counts": "", "level": 3, "is_show": "", "is_last": 1, "advise": "" }, { "lable": "", "haschild": 0, "price": "\u00a5324.0", "pid": "64316946628", "ptype": "Y", "num": 5, "parentnum": 4, "counts": "", "level": 4, "is_show": "", "is_last": 1, "advise": "" }],

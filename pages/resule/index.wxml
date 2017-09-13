@@ -10,7 +10,7 @@
   </view>
 
   <scroll-view class="result-right" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true">
-    <image src="{{logoimg}}" class="brands"></image>
+    <!-- <image src="{{logoimg}}" class="brands"></image> -->
     <view class="result-right-list result-right-message" id="gomessage">
       <view class="nav-show">
         <view class="nav-show-block"></view>
